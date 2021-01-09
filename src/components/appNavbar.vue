@@ -20,7 +20,7 @@
               <router-link active-class="active" class="nav-link" aria-current="page" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link active-class="active" class="nav-link" to="/questions">Questions</router-link>
+              <router-link active-class="active" class="nav-link" to="/">Questions</router-link>
             </li>
             <li class="nav-item dropdown">
               <a active-class="active" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> User123 </a>
@@ -48,7 +48,11 @@ export default {};
 
 <style lang="scss" scoped>
 nav {
+  box-sizing: border-box;
   height: 70px;
+  border-bottom: 1px solid #dee0e1!important;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+  z-index: 999;
 }
 .navbar-brand {
   width: 130px;
