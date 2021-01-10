@@ -7,8 +7,8 @@
           :key="category.id"
           href="#"
           class="py-3 list-group-item list-group-item-action"
-          @click.prevent="category.selected = !category.selected"
-          :class=" {active : category.selected} "
+          @click.prevent=""
+          :class="{ active: category.selected }"
         >
           {{ category.title }}
         </a>
@@ -21,6 +21,8 @@
 import { appAxios } from "@/utils/AppAxios.js";
 import { mapGetters } from "vuex";
 export default {
+  methods: {
+  },
   computed: {
     ...mapGetters({
       categories: "categories/_categoryList",
@@ -44,8 +46,8 @@ a {
   }
 }
 .active {
-    color: #fff!important;
-    background-color: #198754!important;
-    border-color: #0f5132;
+  color: #fff !important;
+  background-color: #198754 !important;
+  border-color: #0f5132;
 }
 </style>

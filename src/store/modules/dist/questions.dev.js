@@ -18,10 +18,28 @@ var _default = {
     }
   },
   actions: {
-    getQuestions: function getQuestions(_ref) {
+    getQuestions: function getQuestions(_ref, selectedCategories) {
       var commit = _ref.commit;
+      // category içindeki created_at e göre sırala (desc: azalarak)
+      var url = "/questions?=_expand&category&_sort=created_at&_order=desc";
 
-      _AppAxios.appAxios.get('/questions').then(function (response) {
+      if (selectedCategories) {
+        var IDs = selectedCategories.filter(function (c) {
+          return c.selected;
+        }).map(function (c) {
+          return "categoryId".concat(c.id);
+        }).join("&");
+        url = "".concat(url, "&").concat(IDs);
+      }
+
+      _AppAxios.appAxios.get(url).then(function (response) {
+        commit('getQuestions', response.data || []);
+      });
+    },
+    FilteredQuestions: function FilteredQuestions(_ref2, categoryId) {
+      var commit = _ref2.commit;
+
+      _AppAxios.appAxios.get("/questions?=categoryId=".concat(categoryId)).then(function (response) {
         commit('getQuestions', response.data || []);
       });
     }

@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
+
+
 const routes = [
   {
     path: '/',
@@ -19,6 +21,10 @@ const routes = [
     path: '/newquestion',
     name: 'NewQuestion',
     component : () => import('../views/NewQuestion.vue')
+  },
+  {
+    path: '/category/:categoryId',
+    component: () => import('../views/FilterCategory.vue')
   }
 ]
 

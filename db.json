@@ -25,12 +25,14 @@
         {
             "title": "deneme-1",
             "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora quod molestiae sint praesentium, quae modi earum recusandae nemo minus tempore",
-            "created_at": "2021-01-08T08:14:49.578Z"
+            "created_at": "2021-01-08T08:14:49.578Z",
+            "categoryId": 1
         },
         {
             "title": "deneme-2",
             "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora quod molestiae sint praesentium, quae modi earum recusandae nemo minus tempore",
-            "created_at": "2021-01-01T08:14:49.578Z"
+            "created_at": "2021-01-01T08:14:49.578Z",
+            "categoryId": 2
         }
     ]
     

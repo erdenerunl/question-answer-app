@@ -40,6 +40,13 @@ var routes = [{
       return _interopRequireWildcard(require('../views/NewQuestion.vue'));
     });
   }
+}, {
+  path: '/category/:categoryId',
+  component: function component() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require('../views/FilterCategory.vue'));
+    });
+  }
 }];
 var router = (0, _vueRouter.createRouter)({
   history: (0, _vueRouter.createWebHistory)(process.env.BASE_URL),
