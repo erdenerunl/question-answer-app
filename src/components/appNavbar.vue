@@ -20,7 +20,7 @@
               <router-link active-class="active" class="nav-link" aria-current="page" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link active-class="active" class="nav-link" to="/">Questions</router-link>
+              <router-link active-class="active" class="nav-link" to="/newquestion">Questions</router-link>
             </li>
             <li class="nav-item dropdown">
               <a active-class="active" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> User123 </a>
