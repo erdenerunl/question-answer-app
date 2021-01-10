@@ -9,17 +9,23 @@ var _vuex = require("vuex");
 
 var _questions = _interopRequireDefault(require("@/store/modules/questions.js"));
 
+var _categories = _interopRequireDefault(require("@/store/modules/categories.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var _default = (0, _vuex.createStore)(_defineProperty({
+var _default = (0, _vuex.createStore)({
   modules: {
-    questions: _questions["default"]
+    questions: _questions["default"],
+    categories: _categories["default"]
   },
   state: {},
   mutations: {},
-  actions: {}
-}, "modules", {}));
+  actions: {
+    initApp: function initApp(_ref) {
+      var dispatch = _ref.dispatch;
+      dispatch('categories/getCategories');
+    }
+  }
+});
 
 exports["default"] = _default;

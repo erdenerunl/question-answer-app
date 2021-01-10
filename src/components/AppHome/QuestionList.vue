@@ -7,23 +7,18 @@
 </template>
 
 <script>
-import { appAxios } from '@/utils/AppAxios.js'
+
 import { mapGetters } from 'vuex'
 import QuestionListItem from "./QuestionListItem.vue";
 export default {
   components: { QuestionListItem },
-  data() {
-    return {
-      questions: [],
-    };
-  },
   created(){
-      appAxios.get("/questions").then(response => {
-          this.questions = response.data
-      })
+    this.$store.dispatch('questions/getQuestions')
   },
   computed : {
-      ...mapGetters(["questions/_questionList"])
+      ...mapGetters({
+        questions : "questions/_questionList"
+      })
   }
 };
 </script>

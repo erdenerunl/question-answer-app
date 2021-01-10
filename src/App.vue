@@ -9,7 +9,9 @@
 import appNavbar from './components/appNavbar.vue'
 export default {
   components: { appNavbar },
-
+  created(){
+    this.$store.dispatch('initApp')
+  }
 }
 </script>
 
