@@ -39,6 +39,11 @@ var _default = {
   getters: {
     _categoryList: function _categoryList(state) {
       return state.categories;
+    },
+    selectedCategories: function selectedCategories(state) {
+      return state.categories.filter(function (c) {
+        return c.selected;
+      });
     }
   }
 };

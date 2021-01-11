@@ -22,10 +22,7 @@ const routes = [
     name: 'NewQuestion',
     component : () => import('../views/NewQuestion.vue')
   },
-  {
-    path: '/category/:categoryId',
-    component: () => import('../views/FilterCategory.vue')
-  }
+
 ]
 
 const router = createRouter({

@@ -11,7 +11,7 @@
       <div class="mt-3">
         <p class="text-muted"> {{ question.details }} </p>
         <div class="d-flex justify-content-end align-items-center">
-          <div class="custom-text-light">category tag</div>
+          <div class="custom-text-light"> {{ question.category.title }} </div>
         </div>
       </div>
     </div>

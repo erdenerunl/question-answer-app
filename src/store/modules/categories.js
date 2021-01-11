@@ -21,6 +21,7 @@ export default {
       }
   },
   getters : {
-      _categoryList : state => state.categories
+      _categoryList : state => state.categories,
+      selectedCategories : state => state.categories.filter(c => c.selected)
   }
 };

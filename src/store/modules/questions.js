@@ -14,29 +14,24 @@ export default {
   },
   actions : {
     getQuestions({commit} , selectedCategories){
-
+      
       // category içindeki created_at e göre sırala (desc: azalarak)
-      let url = "/questions?=_expand&category&_sort=created_at&_order=desc"
+      let url = "/questions?_expand=category&_sort=created_at&_order=desc"
       
       if(selectedCategories){
         const IDs = selectedCategories
-        .filter(c => c.selected)
+        .filter(s => s.selected)
         .map(c => `categoryId${c.id}`).join("&");
 
-        url = `${url}&${IDs}`
-
+        url = `${url}&${IDs}`;
       }
 
 
       appAxios.get(url).then(response => {
+        console.log(response.data)
         commit('getQuestions', response.data || [])
       })
     },
-    FilteredQuestions({commit}, categoryId){
-      appAxios.get(`/questions?=categoryId=${categoryId}`).then(response => {
-        commit('getQuestions', response.data || [])
-      })
-    }
   },
   getters : {
     _questionList : (state) => state.questions

@@ -21,11 +21,11 @@ var _default = {
     getQuestions: function getQuestions(_ref, selectedCategories) {
       var commit = _ref.commit;
       // category içindeki created_at e göre sırala (desc: azalarak)
-      var url = "/questions?=_expand&category&_sort=created_at&_order=desc";
+      var url = "/questions?_expand=category&_sort=created_at&_order=desc";
 
       if (selectedCategories) {
-        var IDs = selectedCategories.filter(function (c) {
-          return c.selected;
+        var IDs = selectedCategories.filter(function (s) {
+          return s.selected;
         }).map(function (c) {
           return "categoryId".concat(c.id);
         }).join("&");
@@ -33,13 +33,7 @@ var _default = {
       }
 
       _AppAxios.appAxios.get(url).then(function (response) {
-        commit('getQuestions', response.data || []);
-      });
-    },
-    FilteredQuestions: function FilteredQuestions(_ref2, categoryId) {
-      var commit = _ref2.commit;
-
-      _AppAxios.appAxios.get("/questions?=categoryId=".concat(categoryId)).then(function (response) {
+        console.log(response.data);
         commit('getQuestions', response.data || []);
       });
     }

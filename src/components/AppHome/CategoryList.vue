@@ -7,8 +7,10 @@
           :key="category.id"
           href="#"
           class="py-3 list-group-item list-group-item-action"
-          @click.prevent=""
+          @click.prevent="category.selected = !category.selected"
           :class="{ active: category.selected }"
+          
+          
         >
           {{ category.title }}
         </a>
@@ -26,8 +28,17 @@ export default {
   computed: {
     ...mapGetters({
       categories: "categories/_categoryList",
+      selectedCategories: "categories/_selectedCategories"
     }),
   },
+  watch: {
+    categories: {
+      deep: true,
+      handler(categories) {
+        this.$store.dispatch("questions/getQuestions", categories);
+      }
+    }
+  }
 };
 </script>
 
