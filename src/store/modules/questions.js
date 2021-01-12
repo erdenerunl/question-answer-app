@@ -4,7 +4,7 @@ import {appAxios} from '@/utils/AppAxios.js'
 export default {
   namespaced: true,
   state: {
-    questions: []
+    questions: [],
 
   },
   mutations : {
@@ -28,7 +28,6 @@ export default {
 
 
       appAxios.get(url).then(response => {
-        console.log(response.data)
         commit('getQuestions', response.data || [])
       })
     },

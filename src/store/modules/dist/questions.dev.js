@@ -33,7 +33,6 @@ var _default = {
       }
 
       _AppAxios.appAxios.get(url).then(function (response) {
-        console.log(response.data);
         commit('getQuestions', response.data || []);
       });
     }

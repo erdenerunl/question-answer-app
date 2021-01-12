@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .question-box {
-  height: 100vh;
+  height: auto;
   margin: 2rem 0;
 }
 </style>

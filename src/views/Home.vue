@@ -9,7 +9,7 @@
           <question-list />
         </div>
         <div class="col-lg-3">
-          <trend-topics />
+          <trend-topics  />
         </div>
       </div>
     </div>
