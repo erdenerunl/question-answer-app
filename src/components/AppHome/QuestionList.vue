@@ -16,7 +16,7 @@ import QuestionListItem from "./QuestionListItem.vue";
 export default {
   components: { QuestionListItem },
   created() {
-    this.$store.dispatch("questions/getQuestions");
+    this.$store.dispatch("questions/getQuestions" ,this.selectedCategories);
   },
   computed: {
     ...mapGetters({

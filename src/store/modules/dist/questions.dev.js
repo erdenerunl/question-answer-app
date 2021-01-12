@@ -27,7 +27,7 @@ var _default = {
         var IDs = selectedCategories.filter(function (s) {
           return s.selected;
         }).map(function (c) {
-          return "categoryId".concat(c.id);
+          return "categoryId=".concat(c.id);
         }).join("&");
         url = "".concat(url, "&").concat(IDs);
       }

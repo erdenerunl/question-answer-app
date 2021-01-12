@@ -28,9 +28,9 @@ export default {
   computed: {
     ...mapGetters({
       categories: "categories/_categoryList",
-      selectedCategories: "categories/_selectedCategories"
+      selectedCategories: "categories/selectedCategories"
     }),
-  },
+  }, 
   watch: {
     categories: {
       deep: true,

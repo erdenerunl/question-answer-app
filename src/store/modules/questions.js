@@ -21,7 +21,7 @@ export default {
       if(selectedCategories){
         const IDs = selectedCategories
         .filter(s => s.selected)
-        .map(c => `categoryId${c.id}`).join("&");
+        .map(c => `categoryId=${c.id}`).join("&");
 
         url = `${url}&${IDs}`;
       }
