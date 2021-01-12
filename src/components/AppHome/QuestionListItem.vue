@@ -4,7 +4,7 @@
       <div class="upper-menu mb-3">
         <i class="custom-text-light fa fa-user-circle me-1"></i>
         <span class="custom-text-light"> User1212 </span>
-        <small class="text-muted ms-3"> {{ question.created_at }} </small>
+        <small class="text-muted ms-3"> {{ showTime(question.created_at) }} </small>
         <i class="fas fa-times text-muted float-end" style="cursor: pointer"></i>
       </div>
       <h5 class="card-title">{{ question.title }}</h5>
@@ -34,8 +34,15 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   props: ["question"],
+  methods : {
+    showTime(time){
+      return moment(time).fromNow();
+    }
+  }
+  
 };
 </script>
 

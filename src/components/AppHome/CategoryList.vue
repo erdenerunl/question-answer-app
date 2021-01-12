@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .category-box {
-  height: 100vh;
+  height: auto;
   margin: 2rem 0 1rem 0;
 }
 a {
