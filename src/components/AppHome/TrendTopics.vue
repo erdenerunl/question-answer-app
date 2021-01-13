@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" v-if="customRecommendations.length > 0">
     <div class="card-header">Recommended for you</div>
     <ul class="list-group">
       <li v-for="recommend in customRecommendations" :key="recommend" class="list-group-item">
@@ -19,6 +19,9 @@
         </div>
       </li>
     </ul>
+  </div>
+  <div class=" card empty-box p-3" v-else>
+    There is no any recommendation.
   </div>
 </template>
 
@@ -66,4 +69,5 @@ img {
   border: 0;
   border-bottom: 1px solid rgba(0,0,0,.125) ;
 }
+
 </style>

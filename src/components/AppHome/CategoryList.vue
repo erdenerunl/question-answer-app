@@ -2,6 +2,11 @@
   <div>
     <div class="category-box bg-light">
       <div class="list-group d-flex text-center align-items-center">
+        <router-link
+          class="ask-button py-3 list-group-item list-group-item-action"
+          to="/newquestion"
+          >Ask a Question <i class="far fa-edit"></i>
+        </router-link>
         <a
           v-for="category in categories"
           :key="category.id"
@@ -9,8 +14,6 @@
           class="py-3 list-group-item list-group-item-action"
           @click.prevent="category.selected = !category.selected"
           :class="{ active: category.selected }"
-          
-          
         >
           {{ category.title }}
         </a>
@@ -23,22 +26,21 @@
 import { appAxios } from "@/utils/AppAxios.js";
 import { mapGetters } from "vuex";
 export default {
-  methods: {
-  },
+  methods: {},
   computed: {
     ...mapGetters({
       categories: "categories/_categoryList",
-      selectedCategories: "categories/selectedCategories"
+      selectedCategories: "categories/selectedCategories",
     }),
-  }, 
+  },
   watch: {
     categories: {
       deep: true,
       handler(categories) {
         this.$store.dispatch("questions/getQuestions", categories);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 
@@ -60,5 +62,14 @@ a {
   color: #fff !important;
   background-color: #198754 !important;
   border-color: #0f5132;
+}
+.ask-button{
+  color: #fff!important;
+  background-color: #198754;
+  border-color: #0f5132;
+
+  &:hover{
+    background-color: #1a6b45;
+  }
 }
 </style>
