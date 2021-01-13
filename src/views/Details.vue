@@ -13,7 +13,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="custom-text-light">
                   <i class="fa fa-user-circle me-1"></i>
-                    {{ timeDetail(question.created_at) }}
+                   User123 <span class="ms-5">{{ timeDetail(question.created_at) }}</span>
                 </div>
                 <div class="custom-text-light">
                   {{ question?.category?.title || "-" }}
@@ -43,7 +43,7 @@
                 >
                   <div class="custom-text-light">
                     <i class="fa fa-user-circle me-1"></i>
-                    {{ timeDetail(comment.created_at) }}
+                     User1212 {{ timeDetail(comment.created_at) }}
                   </div>
                   <div class="question-action-container">
                     <a href="#" class="like-btn text-muted me-2">
